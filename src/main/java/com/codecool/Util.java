@@ -4,7 +4,14 @@ import java.util.Random;
 
 public class Util {
 
-    Random random = new Random();
+    private static int RANDOM_CAUGHT_CHANCE = 30;
+
+    static Random random = new Random();
+
+
+    public static boolean isCaught(){
+        return random.nextInt(0, 100) > RANDOM_CAUGHT_CHANCE;
+    }
 
 
     public String randomLakeNameGenerator(){

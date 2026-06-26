@@ -1,14 +1,15 @@
 package com.codecool;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fisherman {
     private String name;
-    private List<FishingSpot> spots;
+    private List<FishingSpot> spots = new ArrayList<>();
     private int maxReattempsPerSpot;
     private int maxReattempsPerDay;
     private int reattempsLeft;
-    private int successfulCatches;
+    private int successfulCatches = 0;
 
     public Fisherman(String name, int maxReattempsPerSpot, int maxReattempsPerDay){
         this.name = name;
@@ -22,9 +23,22 @@ public class Fisherman {
 // Adds a fishing spot to the fisherman's daily list.
 
     public void doFishingDay(){
+        this.reattempsLeft = maxReattempsPerDay;
         for(FishingSpot spot : spots){
-            System.out.println("spot: " + spot);
+            int reattempsPerSpotLeft = this.maxReattempsPerSpot;
+            while(reattempsPerSpotLeft>0 && reattempsLeft>0){
+                if(Util.isCaught()){
+                    spot.setIsCaught(true);
+                    successfulCatches+=1;
+                    break;
+                }
+                reattempsPerSpotLeft--;
+                reattempsLeft--;
+            }
         }
+        Report report = new Report(name, successfulCatches, spots.size(), reattempsLeft);
+        report.getSummary();
+
     }
 // Attempts a catch at every assigned spot.
 // - Each attempt has a random chance of success.

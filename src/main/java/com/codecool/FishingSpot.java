@@ -10,4 +10,16 @@ public class FishingSpot {
         this.id = idCounter++;
         this.waterZone = waterZone;
     }
+
+    public int getID(){
+        return id;
+    }
+
+    public void setIsCaught(boolean value){
+        this.isCaught = value;
+    }
+
+    public boolean getIsCaught(){
+        return this.isCaught;
+    }
 }
