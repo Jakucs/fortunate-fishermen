@@ -13,8 +13,13 @@ public class Report {
         this.reattempsLeft = reattempsLeft;
     }
 
+    public int getSuccessRate(){
+        return (successfulCatches / totalSpots) * 100;
+    }
+
     public String getSummary(){
-        return "";
+        return "Fisherman " + fishermanName + " caught at " + successfulCatches + " spots out of " + totalSpots +
+                ": success rate " + getSuccessRate() + "% (" + reattempsLeft + "reattempt(s) left)";
     }
 // Returns a formatted string, e.g.:
 // "Fisherman Frank caught at 7 spots out of 10: success rate 70% (0 reattempt(s) left)"

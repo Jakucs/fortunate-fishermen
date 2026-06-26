@@ -11,7 +11,35 @@ public class Util {
         return lakeNames[random.nextInt(0, lakeNames.length)];
     }
 
+    public String randomLakeTypeGenerator(){
+        return lakeTypes[random.nextInt(0, lakeTypes.length)];
+    }
 
+    public String randomRegionGenerator(){
+        return regions[random.nextInt(0, regions.length)];
+    }
+
+    String[] regions = {
+            "Közép-Magyarország",
+            "Közép-Dunántúl",
+            "Nyugat-Dunántúl",
+            "Dél-Dunántúl",
+            "Észak-Magyarország",
+            "Észak-Alföld",
+            "Dél-Alföld"
+    };
+
+
+    String[] lakeTypes = {
+            "Reservoir",
+            "Artificial lake",
+            "Retention pond",
+            "Detention pond",
+            "Farm pond",
+            "Quarry lake",
+            "Gravel pit lake",
+            "Cooling pond"
+    };
 
     String[] lakeNames = {
             "Motionless Cove",
