@@ -17,12 +17,14 @@ public class Fisherman {
     }
 
     public void addSpot(FishingSpot spot){
-
+        this.spots.add(spot);
     }
 // Adds a fishing spot to the fisherman's daily list.
 
     public void doFishingDay(){
-
+        for(FishingSpot spot : spots){
+            System.out.println("spot: " + spot);
+        }
     }
 // Attempts a catch at every assigned spot.
 // - Each attempt has a random chance of success.
