@@ -9,7 +9,7 @@ public class Fisherman {
     private int maxReattempsPerSpot;
     private int maxReattempsPerDay;
     private int reattempsLeft;
-    private int successfulCatches = 0;
+    private double successfulCatches = 0;
 
     public Fisherman(String name, int maxReattempsPerSpot, int maxReattempsPerDay){
         this.name = name;
@@ -37,7 +37,7 @@ public class Fisherman {
             }
         }
         Report report = new Report(name, successfulCatches, spots.size(), reattempsLeft);
-        report.getSummary();
+        System.out.println(report.getSummary());
 
     }
 // Attempts a catch at every assigned spot.

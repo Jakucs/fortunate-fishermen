@@ -10,13 +10,13 @@ public class Main {
         Util util = new Util();
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Hello and welcome!");
 
-        Fisherman fisherman = new Fisherman("Halász Judit", 3, 12);
-        Fisherman fisherman1 = new Fisherman("Halász Agéla", 5, 14);
-        Fisherman fisherman2 = new Fisherman("Tokos Béla", 2, 9);
+        Fisherman fisherman = new Fisherman("Halász Judit", 9, 55);
+        Fisherman fisherman1 = new Fisherman("Halász Agéla", 3, 65);
+        Fisherman fisherman2 = new Fisherman("Tokos Béla", 17, 50);
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 1000; i++){
             fisherman.addSpot(new FishingSpot(
                     new WaterZone(util.randomLakeNameGenerator(),
                             util.randomLakeTypeGenerator(),
@@ -35,6 +35,8 @@ public class Main {
         }
 
         fisherman.doFishingDay();
+        fisherman1.doFishingDay();
+        fisherman2.doFishingDay();
 
     }
 }

@@ -2,18 +2,18 @@ package com.codecool;
 
 public class Report {
     private String fishermanName;
-    private int successfulCatches;
+    private double successfulCatches;
     private int totalSpots;
     private int reattempsLeft;
 
-    public Report(String fishermanName, int successfulCatches, int totalSpots, int reattempsLeft){
+    public Report(String fishermanName, double successfulCatches, int totalSpots, int reattempsLeft){
         this.fishermanName = fishermanName;
         this.successfulCatches = successfulCatches;
         this.totalSpots = totalSpots;
         this.reattempsLeft = reattempsLeft;
     }
 
-    public int getSuccessRate(){
+    public double getSuccessRate(){
         return (successfulCatches / totalSpots) * 100;
     }
 
